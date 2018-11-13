@@ -1,0 +1,7 @@
+prefix: table5jl
+group_name: "{{prefix}}_vmrg"
+vnet: "{{prefix}}vnet"
+nsg_name: "{{prefix}}nsg1"
+subnet_name: "{{prefix}}subnet"
+nic_name: "{{prefix}}nic"
+public_ip: "{{prefix}}publicip"

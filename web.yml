@@ -1,0 +1,30 @@
+---
+- hosts: localhost
+  connection: local
+  vars:
+    group: table5jl_webapprg
+    webapp_name: table5jlwebapp
+    location: eastus2
+  tasks:
+    - name: create group
+      azure_rm_resourcegroup:
+        name: "{{group}}"
+        location: "{{location}}"
+    - name: Create App Service
+      azure_rm_webapp:
+        resource_group: "{{group}}"
+        name: "{{webapp_name}}"
+        plan: 
+          resource_group: "{{group}}"
+          name: table5jlwebapp
+          is_linux: true
+          sku: S1
+          number_of_workers: 1
+        frameworks:
+          - name: "java"
+            version: 8
+            settings:
+              java_container: "tomcat"
+              java_container_version: 8.5
+
+
