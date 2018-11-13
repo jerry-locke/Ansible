@@ -13,7 +13,7 @@
       name: "{{nic_name}}{{vm.name}}"
       virtual_network: "{{vnet}}"
       subnet: "{{subnet_name}}"
-      public_ip_name: "{{public_ip}}"
+      public_ip_name: "{{public_ip}}{{vm.name}}"
       security_group: myNetworkSecurityGroup
   - name: Create  VM
     azure_rm_virtualmachine:
