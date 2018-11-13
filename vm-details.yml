@@ -28,7 +28,7 @@
         - path: /home/azureuser/.ssh/authorized_keys
           key_data: |
             {{ lookup('file','/home/azureops/.ssh/id_rsa.pub') }}
-      network_interfaces: "{{nic_name}}"
+      network_interfaces: "{{nic_name}}{{vm.name}}"
       image:
         offer: UbuntuServer
         publisher: Canonical
